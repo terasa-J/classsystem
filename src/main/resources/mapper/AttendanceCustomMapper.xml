@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eva.classsystem.mapper.AttendanceCustomMapper">
+    <resultMap id="BaseResultMap" type="com.eva.classsystem.pojo.Attendance">
+        <constructor>
+            <idArg column="attendanceID" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="sirID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="createTime" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="actualNumber" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="attendanceCode" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="courseID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+    attendanceID, sirID, createTime, name, actualNumber, attendanceCode, courseID
+  </sql>
+    <select id="selectAttendanceBySir" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from attendance
+        where sirID = #{sirID,jdbcType=VARCHAR} AND courseID = #{courseID,jdbcType=VARCHAR}
+        ORDER BY  createTime DESC
+    </select>
+    <!--放弃考勤-->
+    <delete id="deleteAttendanceBySirIdAndCourseId" parameterType="java.lang.String">
+    delete from attendance
+    where sirID = #{sirID,jdbcType=VARCHAR} AND courseID = #{courseID,jdbcType=VARCHAR} AND attendanceCode is not null
+  </delete>
+    <!--结束考勤-->
+    <update id="updateAttendanceBySirIdAndCourseId" parameterType="java.lang.String">
+    update attendance
+    set attendanceCode = NULL
+    where sirID = #{sirID,jdbcType=VARCHAR} AND courseID = #{courseID,jdbcType=VARCHAR} AND attendanceCode is not null
+  </update>
+    <!--学生数字考勤是否存在该考勤-->
+    <select id="selectAttendanceByStu" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from attendance
+        where sirID = #{sirID,jdbcType=VARCHAR} AND courseID = #{courseID,jdbcType=VARCHAR} AND
+        attendanceCode = #{attendanceCode,jdbcType=VARCHAR}
+    </select>
+    <!--查询该课程已经进行了几次考勤-->
+    <!--学生数字考勤是否存在该考勤-->
+    <select id="selectTotalAttendance" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from attendance
+        where sirID = #{sirID,jdbcType=VARCHAR} AND courseID = #{courseID,jdbcType=VARCHAR} AND
+        attendanceCode IS NULL
+    </select>
+
+</mapper>

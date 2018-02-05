@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eva.classsystem.mapper.StuAttendanceCustomMapper">
+    <resultMap id="BaseResultMap" type="com.eva.classsystem.pojo.StuAttendance">
+        <constructor>
+            <idArg column="stuAttendID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+            <arg column="stuID" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="attendanceID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+            <arg column="attendanceCode" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="location" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="attendTime" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </constructor>
+    </resultMap>
+
+    <resultMap id="StuAttendResultMap" type="com.eva.classsystem.pojo.StuAttendanceInfo">
+        <constructor>
+            <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="stuID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="calssNo" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="stuAttendID" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="attendanceID" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="location" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </constructor>
+    </resultMap>
+
+    <resultMap id="CourseAttendResultMap" type="com.eva.classsystem.pojo.CourseAttendanceInfo">
+        <constructor>
+            <arg column="attendanceID" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="sirID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="courseID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="stuID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="location" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="attendTime" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </constructor>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+    stuAttendID, stuID, attendanceID, attendanceCode, location
+  </sql>
+
+    <select id="selectAttendanceStu" parameterType="java.lang.Integer" resultMap="StuAttendResultMap">
+    select
+    *
+    from student s,stu_attendance sa
+    where s.stuID = sa.stuID and sa.attendanceID =#{attendanceID,jdbcType=INTEGER}
+
+  </select>
+
+    <!--查询学生出勤的记录 (学生角度)-->
+    <select id="selectAttendance" resultMap="CourseAttendResultMap">
+        select
+        a.attendanceID,a.sirID,a.name,a.courseID,sa.stuID,sa.location,sa.attendTime
+        from attendance a,stu_attendance sa
+        where
+        a.attendanceID = sa.attendanceID
+        AND sa.stuID = #{stuID,jdbcType=VARCHAR}
+        AND sa.attendanceID IN
+        <foreach item="item" collection="list" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+</mapper>

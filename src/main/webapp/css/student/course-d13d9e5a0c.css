@@ -1,0 +1,206 @@
+.content {
+    padding: 0% 0 10px
+}
+
+.course-main-list {
+    padding: 0 2%
+}
+
+.course-main-list li {
+    height: 119px;
+    padding: 9px 4% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+    margin-bottom: 5.5%;
+    position: relative
+}
+
+.course-main-list li .link {
+    position: absolute;
+    width: 100%;
+    height: 128px;
+    left: 0;
+    top: 0
+}
+
+.course-main-list li .title {
+    display: -webkit-box
+}
+
+.course-main-list li .title h3 {
+    -webkit-box-flex: 1;
+    box-sizing: border-box;
+    font-weight: 400;
+    line-height: 30px;
+    height: 30px;
+    color: #FFF
+}
+
+.course-main-list li .title .opt-btn {
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: relative
+}
+
+.course-main-list li .title .opt-btn span {
+    display: block;
+    border-radius: 3px;
+    color: #FFF
+}
+
+.course-main-list li .title .opt-btn span:active {
+    color: #aaa
+}
+
+.course-main-list li .yqm {
+    position: relative;
+    height: 30px
+}
+
+.course-main-list li .yqm span {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    vertical-align: middle
+}
+
+.course-main-list li .yqm b {
+    font-weight: 400;
+    font-style: normal
+}
+
+.course-main-list li .yqm i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 7px 5px;
+    border-style: solid dashed dashed;
+    border-color: #fff transparent transparent;
+    vertical-align: middle;
+    margin: 3px 3px 0
+}
+
+.course-main-list li .courseRole {
+    color: #fff
+}
+
+.course-main-list li .total {
+    margin-top: 35px;
+    color: #FFF;
+    display: -webkit-box
+}
+
+.course-main-list li .total p {
+    -webkit-box-flex: 1;
+    line-height: 30px
+}
+
+.xj-tips {
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -45px;
+    margin-left: -40%;
+    width: 80%;
+    height: 90px;
+    background-color: rgba(0, 0, 0, .8)
+}
+
+.xj-tips .img {
+    width: 100px;
+    text-align: center;
+    padding-top: 24px
+}
+
+.xj-tips .img img {
+    width: 40px
+}
+
+.checkLists, .checkLists li {
+    width: 100%;
+    -webkit-tap-highlight-color: transparent
+}
+
+.xj-tips .word {
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 30px;
+    text-align: center;
+    padding-top: 15px
+}
+
+.descli p {
+    color: #aaa
+}
+
+.checkLists {
+    position: relative
+}
+
+.checkLists li {
+    height: 45px;
+    line-height: 45px;
+    background-color: #fff
+}
+
+.checkLists li:active {
+    background-color: #f6f6f6
+}
+
+.checkLists li span {
+    color: #2d2d2d;
+    width: 80%;
+    padding: 0 4%;
+    display: inline-block
+}
+
+.checkLists li.active span {
+    color: #4d90fe
+}
+
+.ktcon1r ul li.ktli1, .ktcon1r ul li.ktli2 {
+    line-height: 16px;
+    height: 16px;
+    color: #272636;
+    font-size: 14px
+}
+
+.confirm .title span {
+    max-width: 6em
+}
+
+.ktcon1r {
+    height: 16px;
+    line-height: 16px;
+    margin-left: 10px;
+    margin-bottom: 10px
+}
+
+.ktcon1r ul {
+    float: left
+}
+
+.ktcon1r ul li {
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    padding-left: 27px
+}
+
+.ktcon1r ul li.ktli1 {
+    background: url(../../img/student/paixu.png) no-repeat;
+    display: list-item
+}
+
+/*.ktcon1r ul li.ktli2 {*/
+    /*margin-left: 18px;*/
+    /*background: url(./img/dangan.png) 0 -20px no-repeat;*/
+    /*display: none;*/
+    /*display: list-item*/
+/*}*/

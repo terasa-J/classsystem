@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eva.classsystem.mapper.CourseCustomMapper">
+    <resultMap id="BaseResultMap" type="com.eva.classsystem.pojo.Course">
+        <constructor>
+            <idArg column="Id" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="invitationCode" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="sirID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="cname" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="createTime" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="courseID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+    Id, invitationCode, sirID, cname, createTime, courseID
+  </sql>
+
+    <select id="selectClassBySirID" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from course
+        where sirID = #{id,jdbcType=VARCHAR}
+        ORDER BY  createTime DESC
+    </select>
+
+    <select id="selectByCourseID" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from course
+        where courseID = #{courseID,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteByCourseID" parameterType="java.lang.String">
+        delete from course
+        where courseID = #{courseID,jdbcType=VARCHAR}
+    </delete>
+
+    <!--获得所有邀请码-->
+    <select id="selectCourseByCode"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from course
+        WHERE invitationCode =  #{invitationCode,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>

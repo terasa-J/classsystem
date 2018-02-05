@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eva.classsystem.mapper.StudentCourseCustomMapper">
+    <resultMap id="BaseResultMap" type="com.eva.classsystem.pojo.StudentCourse">
+        <constructor>
+            <idArg column="Id" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="courseID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="stuID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="attendTime" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </constructor>
+    </resultMap>
+
+    <resultMap id="StudentCourseResultMap" type="com.eva.classsystem.pojo.StudentCourseInfo">
+        <constructor>
+            <!--student_course 表-->
+            <arg column="Id" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="courseID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="stuID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="attendTime" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="invitationCode" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <!--course 表-->
+            <arg column="sirID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="cname" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="createTime" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <!--teacher 表-->
+            <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </constructor>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    Id, courseID, stuID, attendTime
+  </sql>
+
+    <!--获得学生加入的班级 List-->
+    <select id="selectCourseList" parameterType="java.lang.String" resultMap="StudentCourseResultMap">
+    select 
+     sc.Id, sc.courseID, sc.stuID, sc.attendTime,c.invitationCode,c.sirID,c.cname,c.createTime,t.name
+    from student_course sc,course c,teacher t
+    where sc.courseID = c.courseID and c.sirID = t.sirID and sc.stuID = #{stuID,jdbcType=VARCHAR}
+  </select>
+
+    <!--退出班级-->
+    <delete id="deleteByStuIdAndCourseId" parameterType="java.lang.String">
+    delete from student_course
+    where courseID = #{courseid,jdbcType=VARCHAR} and stuID = #{stuid,jdbcType=VARCHAR}
+  </delete>
+
+
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eva.classsystem.mapper.StudentCustomMapper">
+    <resultMap id="BaseResultMap" type="com.eva.classsystem.pojo.Student">
+        <constructor>
+            <idArg column="Id" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="stuID" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="school" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="headImg" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="calssNo" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="major" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+    Id, email, password, name, stuID, school, headImg, calssNo, major
+  </sql>
+
+    <select id="selectByStuID" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        where stuID = #{stuID,jdbcType=VARCHAR}
+    </select>
+
+    <!--获得签到的学生-->
+    <select id="selectAttendanceStu" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        where stuID IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <!--查询未签到的同学-->
+    <select id="selectNotAttendanceStu"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        where stuID in(
+--         查询所以加入 签到的课程 该班级的学生
+           (select stuID from student_course
+            where courseID = #{courseID}))
+            and
+--         查询已经签到的同学stuID
+            stuID not in (select stuID from stu_attendance where attendanceID = #{attendanceID});
+
+    </select>
+
+
+</mapper>

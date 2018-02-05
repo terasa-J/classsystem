@@ -1,0 +1,492 @@
+@charset "utf-8";
+#wrapper {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+#file-uploader div:last-child {
+    height: 100% !important
+}
+
+.homework-list {
+    padding: 2%
+}
+
+.homework-list li {
+    margin-bottom: 5%;
+    background-color: #fff;
+    border-radius: 1px;
+    position: relative
+}
+
+.homework-list > ul > li {
+    box-shadow: 0 0 1px .7px #818181
+}
+
+.homework-list li .work-type {
+    padding: 12px 4% 0;
+    color: #AAA;
+    font-size: 0
+}
+
+.homework-list li .work-type span:first-child {
+    margin-right: 8px
+}
+
+.homework-list li .work-type span {
+    font-size: 1.3rem;
+    margin-right: 4px
+}
+
+.homework-list li .title {
+    display: -webkit-box;
+    padding: 12px 4%
+}
+
+.homework-list li .title h3 {
+    line-height: 30px;
+    font-weight: 400;
+    -webkit-box-flex: 1;
+    word-wrap: break-word;
+    word-break: break-all
+}
+
+.homework-list li .title .state {
+    width: 85px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-left: 10px;
+    position: relative
+}
+
+.homework-list li .title .state a {
+    display: block;
+    width: 85px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 3px
+}
+
+.homework-list li .title .state a.sc-work {
+    color: #fff;
+    background-color: #357ae8
+}
+
+.homework-list li .title .state a.sc-work:active {
+    background-color: #2e68c5
+}
+
+.homework-list li .title .state a.sc-again {
+    color: #fff;
+    background-color: red
+}
+
+.homework-list li .title .state a.sc-again:active {
+    background-color: #d90000
+}
+
+.homework-list li .title .state a.view-work {
+    color: #2d2d2d;
+    background-color: #f2f2f2
+}
+
+.homework-list li .title .state a.view-work:active {
+    background-color: #cecece
+}
+
+.homework-list li .title .state a.view-score {
+    color: #fff;
+    background-color: #0f9d58
+}
+
+.homework-list li .title .state a.view-score:active {
+    background-color: #0d864b
+}
+
+.homework-list li .title .opt-btn {
+    display: block;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: relative
+}
+
+.homework-list li .title .opt-btn span {
+    display: block;
+    border-radius: 3px;
+    color: #818181
+}
+
+.homework-list li .title .opt-btn span:active {
+    background: #eee
+}
+
+.homework-list li .title .opt-box {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 110px;
+    padding: 5px 0;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2);
+    z-index: 999;
+    display: none
+}
+
+.homework-list li .title .opt-box a {
+    text-align: left;
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    text-indent: 15px;
+    color: #2d2d2d
+}
+
+.homework-list li .title .opt-box a:active {
+    background-color: #f6f6f6
+}
+
+.homework-list .time {
+    height: 26px;
+    line-height: 26px
+}
+
+.homework-list .cont .limit, .homework-list .cont .nolim {
+    line-height: 20px;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+.homework-list .time p {
+    display: inline-block;
+    background: #f6f6f6;
+    padding: 0 4%
+}
+
+.homework-list .time p span {
+    margin-right: 5px
+}
+
+.homework-list .cont {
+    padding: 11px 0;
+    margin: 0 5%;
+    -webkit-box-shadow: 0 1px 1px -1px rgba(0, 0, 0, .3)
+}
+
+.homework-list .cont .limit img {
+    float: left;
+    padding: 0 10px 10px 0;
+    max-width: 100px;
+    max-height: 100px
+}
+
+.homework-list .cont.stu {
+    margin: 0;
+    padding: 11px 5%
+}
+
+.homework-list .cont .limit h1, .homework-list .cont .limit h2, .homework-list .cont .limit h3, .homework-list .cont .limit h4 {
+    font-size: 1.5rem;
+    font-weight: 400
+}
+
+.homework-list li .cont .annex-talk {
+    margin-top: 9px
+}
+
+.homework-list li .cont .annex-talk a {
+    color: #2d2d2d
+}
+
+.homework-list li .cont .annex-talk .annex-count {
+    margin-right: 3%;
+    line-height: 16px
+}
+
+.homework-list li .cont .annex-talk .count {
+    font-style: normal;
+    display: inline-block;
+    min-width: 14px;
+    background: #e2e9f8;
+    border-radius: 10px;
+    text-align: center;
+    color: #357ae8;
+    padding: 1px 5px;
+    margin-top: -2px;
+    vertical-align: middle
+}
+
+.homework-list li .correct-state {
+    padding: 0 4% 13px;
+    display: -webkit-box
+}
+
+.homework-list li .correct-state .state {
+    display: block;
+    -webkit-box-flex: 1;
+    text-align: center
+}
+
+.homework-list li .correct-state .state i {
+    font-style: normal;
+    font-size: 2.5rem;
+    display: block;
+    line-height: 48px
+}
+
+.homework-list li .correct-state .line {
+    height: 18px;
+    width: 1px;
+    position: relative;
+    margin-top: 28px
+}
+
+.homework-list li .link, .homework-list li .plink {
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.homework-list li .correct-state span {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 20px;
+    margin-top: -4px
+}
+
+.homework-list li .correct-state .wp span {
+    color: #32c76e
+}
+
+.homework-list li .correct-state .yp span {
+    color: #2d2d2d
+}
+
+.homework-list li .correct-state .wj span {
+    color: red
+}
+
+.homework-list li .link {
+    position: absolute
+}
+
+.homework-list li:active {
+    background-color: #f6f6f6
+}
+
+.detail-page .homework-list .cont {
+    margin: 0 3%;
+    padding: 15px 0
+}
+
+.detail-page .homework-list .cont h1, .detail-page .homework-list .cont h2, .detail-page .homework-list .cont h3, .detail-page .homework-list .cont h4 {
+    font-weight: 400;
+    font-size: 1.5rem
+}
+
+.detail-page .annex ul li {
+    padding-left: 4%;
+    padding-right: 4%
+}
+
+.detail-page .annex .annex-count {
+    padding: 16px 4% 8px
+}
+
+.detail-page .homework-list {
+    padding-top: 5px;
+    padding-bottom: 14px;
+    background-color: #fff
+}
+
+.detail-page .homework-list li {
+    margin: 0
+}
+
+.discuss {
+    margin-top: 18px
+}
+
+.discuss h2 {
+    font-weight: 400;
+    padding: 0 4%
+}
+
+.discuss .topheader {
+    display: -webkit-box;
+    line-height: 40px
+}
+
+.discuss .refresh {
+    background: url(../../img/topic/comment.png) no-repeat;
+    background-size: 300px auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: 10px
+}
+
+.discuss .discuss-list {
+    margin-bottom: 100px
+}
+
+.discuss .discuss-list > li {
+    padding-bottom: 8px
+}
+
+.discuss .discuss-list > li .speaker {
+    display: -webkit-box;
+    height: 38px;
+    margin: 0 4%;
+    padding: 14px 0
+}
+
+.discuss .discuss-list > li:first-child .speaker:after, .discuss .discuss-list > li:first-child .speaker:before {
+    border-top: none !important
+}
+
+.discuss .discuss-list > li .speaker .img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px
+}
+
+.discuss .discuss-list > li .speaker .img img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-image: url(/public/common/img/avatarloading.gif);
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.discuss .discuss-list > li .speaker .info {
+    -webkit-box-flex: 1
+}
+
+.discuss .discuss-list > li .speaker .info h3 {
+    font-weight: 400;
+    line-height: 22px;
+    color: #999;
+    font-size: 14px !important;
+    max-width: 100px
+}
+
+.discuss .discuss-list > li .speaker .info p {
+    color: #aaa;
+    margin-top: 3px
+}
+
+.discuss .discuss-list > li .speaker .opt-btn {
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    position: relative
+}
+
+.discuss .discuss-list > li .speaker .opt-btn span {
+    display: block;
+    color: #828282
+}
+
+.discuss .discuss-list > li .speaker .opt-btn span.active {
+    background-color: #f6f6f6
+}
+
+.discuss .discuss-list > li .speaker .upvote-area {
+    display: inline-block;
+    cursor: pointer;
+    height: 38px;
+    line-height: 50px;
+    margin-right: 10px
+}
+
+.discuss .discuss-list > li .speaker .upvote-area .upvoteicon {
+    background: url(/public/home/img/topic/upvote.png?v=100) center no-repeat;
+    width: 17px;
+    height: 38px;
+    line-height: 38px;
+    display: inline-block;
+    background-size: 100%
+}
+
+.discuss .discuss-list > li .speaker .upvote-area .upvoteicon.active {
+    background: url(/public/home/img/topic/upvoted.png?v=100) center no-repeat;
+    width: 17px;
+    height: 38px;
+    line-height: 38px;
+    display: inline-block;
+    background-size: 100%
+}
+
+.discuss .discuss-list > li .speaker .upvote-area span {
+    color: grey;
+    font-size: 16px;
+    margin-right: 5px;
+    display: inline-block;
+    height: 38px;
+    line-height: 44px
+}
+
+.discuss .discuss-list > li .speaker .upvote-area span.active {
+    color: #5d8ef6;
+    font-size: 16px;
+    margin-right: 5px;
+    display: inline-block;
+    height: 38px;
+    line-height: 44px
+}
+
+.discuss .discuss-list > li .talk-cont > p {
+    padding: 0 4%;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #505050;
+    line-height: 23px
+}
+
+.discuss .discuss-list > li .speaker .opt-box {
+    width: 110px;
+    padding: 5px 0;
+    background-color: #fff;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 30px;
+    display: none;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2)
+}
+
+.discuss .discuss-list > li .speaker .opt-box a {
+    text-align: left;
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    text-indent: 15px;
+    color: #2d2d2d
+}
+
+.discuss .discuss-list > li .speaker .opt-box a:active {
+    background-color: #f6f6f6
+}
+
+.h100 {
+    height: 50px;
+    line-height: 50px
+}
+
+.handup-homework-tips {
+    display: inline-block;
+    padding: 0 2%;
+    color: #fff;
+    background-color: #357ae8;
+    background-image: none
+}
