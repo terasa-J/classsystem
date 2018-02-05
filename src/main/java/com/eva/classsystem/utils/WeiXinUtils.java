@@ -95,7 +95,7 @@ public class WeiXinUtils {
 		ViewButtonPOJO viewButtonPOJO = new ViewButtonPOJO();
 		viewButtonPOJO.setName("进入课堂");
 		viewButtonPOJO.setType("view");
-		viewButtonPOJO.setUrl("http://www.baidu.com");
+		viewButtonPOJO.setUrl("http://miffy.free.ngrok.cc/home");
 		
 		//clickButton
 		ClickButtonPOJO clickButton1 = new ClickButtonPOJO();

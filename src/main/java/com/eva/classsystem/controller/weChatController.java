@@ -19,9 +19,8 @@ import java.util.Map;
  */
 @Controller
 public class weChatController {
-    @GetMapping("/checkSignature")
-    public @ResponseBody
-    String checkSignature(HttpServletRequest request ) throws IOException {
+    @GetMapping(value = "/checkSignature")
+    public @ResponseBody String checkSignature(HttpServletRequest request ) throws IOException {
         String signature = request.getParameter("signature");
         String timestamp = request.getParameter("timestamp");
         String nonce = request.getParameter("nonce");
@@ -41,7 +40,7 @@ public class weChatController {
     }
 
     //接收文本信息POST并回复
-    @PostMapping("/checkSignature")
+    @PostMapping(value = "/checkSignature")
     public @ResponseBody String testMessage( HttpServletRequest request ){
         Map< String,String > textMap = MessageUtils.xmlToTextMessage( request );
         String msgType = textMap.get("MsgType");

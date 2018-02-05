@@ -55,7 +55,7 @@
                 <div class="weui_cell_hd"><label class="weui_label fs32">身份</label></div>
                 <div class="weui_cell_bd weui_cell_primary  ">
                     <form method="post" action="" class="fs32 ">
-                        <input type="radio" name="role" style="margin-right: 2%" value="student" checked>学生
+                        <input type="radio"  name="role" style="margin-right: 2%;" value="student" checked>学生
                         <input type="radio" name="role" style="margin-left: 10%;margin-right: 2%" value="teacher">教师
                     </form>
 

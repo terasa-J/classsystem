@@ -121,39 +121,40 @@
     </div>
 
     <!-- 底部信息栏 -->
+    <form id="userClassForm" action="getUserCoursePage" method="post">
+        <footer class="fs24 footmenu">
 
-    <footer class="fs24 footmenu">
+            <a id="classA" onFocus="clickClass()" onblur="unClickClass()"
+               href="javascript:document:userClassForm.submit();">
+                <div class="navSelf">
+                    <i class="iconfont bold">
+                        <img onfocus=this.blur() id="imgClass"
+                             src="../img/common/myClass1.png" style="vertical-align:middle;text-align:center">
+                    </i>
+                    <span>课堂</span>
+                </div>
+            </a>
 
-        <a id="classA" onFocus="clickClass()" onblur="unClickClass()" href="javascript:;">
-            <div class="navSelf">
-                <i class="iconfont bold">
-                    <img onfocus=this.blur() id="imgClass"
-                         src="../img/common/myClass1.png" style="vertical-align:middle;text-align:center">
-                </i>
-                <span>课堂</span>
-            </div>
-        </a>
 
-
-        <a id="myselfA" onFocus="clickmyself()" onBlur="unClickMyself()" href="javascript:;">
-            <div class="navSelf">
-                <em class="dot red meDot hide2"></em>
-                <i class="iconfont bold">
-                    <img onfocus=this.blur() id="imgMyself" src="../img/common/myself2.png"
-                         style="vertical-align:middle;text-align:center"></i>
-                <span>我</span>
-            </div>
-        </a></footer>
-
+            <a id="myselfA" onFocus="clickmyself()" onBlur="unClickMyself()" href="javascript:;">
+                <div class="navSelf">
+                    <em class="dot red meDot hide2"></em>
+                    <i class="iconfont bold">
+                        <img onfocus=this.blur() id="imgMyself" src="../img/common/myself2.png"
+                             style="vertical-align:middle;text-align:center"></i>
+                    <span>我</span>
+                </div>
+            </a></footer>
+    </form>
 </div>
 
 <%--提示框--%>
-<div class="" id="tipWindow" >
-    <div class="gTips" ><span style="background-color: #EA3640">${tipInfo}</span></div>
+<div class="" id="tipWindow">
+    <div class="gTips"><span style="background-color: #EA3640">${tipInfo}</span></div>
 </div>
 
 </body>
 </html>
 <script>
-    setTimeout('$("#tipWindow").addClass("hidden")',3000);
+    setTimeout('$("#tipWindow").addClass("hidden")', 3000);
 </script>
