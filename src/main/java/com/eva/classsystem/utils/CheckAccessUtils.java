@@ -1,6 +1,6 @@
 package com.eva.classsystem.utils;
 
-import com.eva.classsystem.pojo.weChat.AccessReqPOJO;
+import com.eva.classsystem.pojo.weChatPojo.AccessReqPOJO;
 
 import java.security.MessageDigest;
 import java.util.Arrays;

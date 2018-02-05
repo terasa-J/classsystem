@@ -1,6 +1,6 @@
 package com.eva.classsystem.controller;
 
-import com.eva.classsystem.pojo.weChat.AccessReqPOJO;
+import com.eva.classsystem.pojo.weChatPojo.AccessReqPOJO;
 import com.eva.classsystem.utils.CheckAccessUtils;
 import com.eva.classsystem.utils.MessageUtils;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ public class weChatController {
     /**
      * @Author: Jiang Jiahong
      * @Description: 微信端服务器验证 连接微信
-     * @Date: 2018/2/5 17:10
+     * @Date: 2018/2/5 17:12
      */
     @GetMapping(value = "/checkSignature")
     public @ResponseBody String checkSignature(HttpServletRequest request ) throws IOException {

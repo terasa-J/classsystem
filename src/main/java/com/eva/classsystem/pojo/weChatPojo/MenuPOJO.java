@@ -1,6 +1,4 @@
-package com.eva.classsystem.pojo.weChat;
-
-import java.awt.Button;
+package com.eva.classsystem.pojo.weChatPojo;
 
 /**
  * 

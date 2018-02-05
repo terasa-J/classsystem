@@ -1,4 +1,4 @@
-package com.eva.classsystem.pojo.weChat;
+package com.eva.classsystem.pojo.weChatPojo;
 
 import java.util.List;
 

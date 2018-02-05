@@ -1,4 +1,4 @@
-package com.eva.classsystem.pojo.weChat;
+package com.eva.classsystem.pojo.weChatPojo;
 /*
  * 开发者提交信息后，微信服务器将发送GET请求到填写的服务器地址URL上，GET请求携带参数如下表所示：
  * signature	微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。

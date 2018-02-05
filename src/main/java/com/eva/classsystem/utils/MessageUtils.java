@@ -12,9 +12,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.eva.classsystem.pojo.weChat.NewsMessagePOJO;
-import com.eva.classsystem.pojo.weChat.NewsPOJO;
-import com.eva.classsystem.pojo.weChat.TextMessagePOJO;
+import com.eva.classsystem.pojo.weChatPojo.NewsMessagePOJO;
+import com.eva.classsystem.pojo.weChatPojo.NewsPOJO;
+import com.eva.classsystem.pojo.weChatPojo.TextMessagePOJO;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;

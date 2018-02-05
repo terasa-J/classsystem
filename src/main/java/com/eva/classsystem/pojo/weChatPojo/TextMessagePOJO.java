@@ -1,4 +1,4 @@
-package com.eva.classsystem.pojo.weChat;
+package com.eva.classsystem.pojo.weChatPojo;
 /**
  * 接受微信端的文本消息
  * <xml>

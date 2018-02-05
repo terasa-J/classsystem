@@ -5,7 +5,7 @@ package com.eva.classsystem.utils;
 
 import com.alibaba.fastjson.JSONObject;
 
-import com.eva.classsystem.pojo.weChat.*;
+import com.eva.classsystem.pojo.weChatPojo.*;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;

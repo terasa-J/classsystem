@@ -1,4 +1,4 @@
-package com.eva.classsystem.pojo.weChat;
+package com.eva.classsystem.pojo.weChatPojo;
 /**
  * 
 <p>Title: 关注/取消关注事件</p>
