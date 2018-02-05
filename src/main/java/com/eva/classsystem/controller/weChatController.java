@@ -21,8 +21,8 @@ import java.util.Map;
 public class weChatController {
     /**
      * @Author: Jiang Jiahong
-     * @Description: 微信端服务器验证
-     * @Date: 2018/2/5 17:09
+     * @Description: 微信端服务器验证 连接微信
+     * @Date: 2018/2/5 17:10
      */
     @GetMapping(value = "/checkSignature")
     public @ResponseBody String checkSignature(HttpServletRequest request ) throws IOException {
