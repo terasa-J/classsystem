@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eva.classsystem.mapper.StuAttendanceMapper">
+  <resultMap id="BaseResultMap" type="com.eva.classsystem.pojo.StuAttendance">
+    <constructor>
+      <idArg column="stuAttendID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="stuID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="attendanceID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="attendanceCode" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="location" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="attendTime" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    stuAttendID, stuID, attendanceID, attendanceCode, location, attendTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from stu_attendance
+    where stuAttendID = #{stuattendid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from stu_attendance
+    where stuAttendID = #{stuattendid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.eva.classsystem.pojo.StuAttendance">
+    insert into stu_attendance (stuAttendID, stuID, attendanceID, 
+      attendanceCode, location, attendTime
+      )
+    values (#{stuattendid,jdbcType=INTEGER}, #{stuid,jdbcType=VARCHAR}, #{attendanceid,jdbcType=INTEGER}, 
+      #{attendancecode,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{attendtime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.eva.classsystem.pojo.StuAttendance">
+    insert into stu_attendance
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stuattendid != null">
+        stuAttendID,
+      </if>
+      <if test="stuid != null">
+        stuID,
+      </if>
+      <if test="attendanceid != null">
+        attendanceID,
+      </if>
+      <if test="attendancecode != null">
+        attendanceCode,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="attendtime != null">
+        attendTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stuattendid != null">
+        #{stuattendid,jdbcType=INTEGER},
+      </if>
+      <if test="stuid != null">
+        #{stuid,jdbcType=VARCHAR},
+      </if>
+      <if test="attendanceid != null">
+        #{attendanceid,jdbcType=INTEGER},
+      </if>
+      <if test="attendancecode != null">
+        #{attendancecode,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="attendtime != null">
+        #{attendtime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eva.classsystem.pojo.StuAttendance">
+    update stu_attendance
+    <set>
+      <if test="stuid != null">
+        stuID = #{stuid,jdbcType=VARCHAR},
+      </if>
+      <if test="attendanceid != null">
+        attendanceID = #{attendanceid,jdbcType=INTEGER},
+      </if>
+      <if test="attendancecode != null">
+        attendanceCode = #{attendancecode,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="attendtime != null">
+        attendTime = #{attendtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where stuAttendID = #{stuattendid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eva.classsystem.pojo.StuAttendance">
+    update stu_attendance
+    set stuID = #{stuid,jdbcType=VARCHAR},
+      attendanceID = #{attendanceid,jdbcType=INTEGER},
+      attendanceCode = #{attendancecode,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      attendTime = #{attendtime,jdbcType=VARCHAR}
+    where stuAttendID = #{stuattendid,jdbcType=INTEGER}
+  </update>
+</mapper>
