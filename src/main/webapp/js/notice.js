@@ -6,9 +6,11 @@ function judge() {
         $("#confirm").addClass("active");
         $("#confirm").attr("href", "javascript:document:confirmDoNoticeForm.submit();");
     } else {
-        $("#update").removeClass("active");
-        $("#update").attr("href", "javascript:;");
+        $("#confirm").removeClass("active");
+        $("#confirm").attr("href", "javascript:;");
+        $("#tipWindow").removeClass("hidden");
         $(".gTips span").text("标题与内容均不能为空");
+        setTimeout('$("#tipWindow").addClass("hidden")', 2000);
     }
 }
 

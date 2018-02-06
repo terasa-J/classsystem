@@ -70,8 +70,7 @@
                     <li class="border-1px" data-id="MDAwMDAwMDAwMLR2uaE">
                         <p class="stuid fs28 text-overflow">${stuAttendanceList.stuid}</p>
                         <p class="name text-overflow fs30">${stuAttendanceList.name}</p>
-                        <input type="text"  class="stuid fs28 " style="margin-right: 130px;max-width: 150px" value="${stuAttendanceList.location}">
-                        <%--<p class="stuid fs28 text-overflow" style="margin-right: 130px">${stuAttendanceList.location}</p>--%>
+                        <%--<input type="text"  class="stuid fs28 " style="margin-right: 130px;max-width: 150px" value="${stuAttendanceList.location}">--%>
                         <a href="javascript:return false;" onclick="return false;"
                            style="cursor: default;" class="green fs30" data-state="0">出勤</a>
                     </li>

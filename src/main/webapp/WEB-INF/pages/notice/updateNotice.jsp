@@ -51,6 +51,7 @@
                     </div>
                     <input type="hidden" name="courseid" value="${courseId}">
                     <input type="hidden" name="noticeid" value="${notice.noticeid}">
+                    <input type="hidden" name="index" value="${index}">
                 </div>
             </div>
         </div>

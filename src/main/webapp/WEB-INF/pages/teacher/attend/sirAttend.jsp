@@ -48,45 +48,52 @@
 
     </nav>
 
+    <div class="mainView workspace">
+        <div class="notice-list-container">
+            <div class="content">
+                <!-- 创建新的考勤 -->
+                <div class="send-an" style="margin-bottom: 2%;">
+                    <a href="createAttendance?courseId=${course.courseid}&name=${course.cname}" id="publish-topic">
+                        <i class="iconfont fs28">
+                            <img src="../img/common/attend.png" style="vertical-align: middle;text-align: center;">
+                        </i>
+                        <span class="fs26" style=" white-space: nowrap;display: inline-block; ">创建新考勤</span>
+                    </a>
 
-    <!-- 创建新的考勤 -->
-    <div class="send-an" style="margin-bottom: 2%">
-        <a href="createAttendance?courseId=${course.courseid}&name=${course.cname}" id="publish-topic">
-            <i class="iconfont fs28">
-                <img src="../img/common/attend.png" style="vertical-align: middle;text-align: center;">
-            </i>
-            <span class="fs26" style=" white-space: nowrap;display: inline-block; ">创建新考勤</span>
-        </a>
-    </div>
-
-    <ul id="topic-lists" class="notice-lists" style="overflow:auto;">
-        <c:forEach items="${attendanceList}" var="attendanceList">
-            <!-- 考勤信息 -->
-            <div id="wrapper" class="workspace">
-                <div class="attendance-list">
-                    <ul>
-                        <li class="border-1px" data-id="MDAwMDAwMDAwMLOcrduGz6ux">
-                                <%--点击每一个详情--%>
-                            <a href="attendanceDetail?attendanceId=${attendanceList.attendanceid}&courseId=${course.courseid}"
-                               class="link"></a>
-                            <div class="attence-cont">
-                                <div class="title">
-                                    <h3 class="fs30 text-overflow">${attendanceList.name}</h3>
-                                </div>
-                                <div class="rate fs24" style="padding-top: 10px">
-                                    <span class="text-overflow">应到 : ${attendanceList.actualnumber}人</span>
-                                    <span class="text-overflow"
-                                          style="margin-left: 130px">考勤时间 : ${attendanceList.createtime}</span>
-                                </div>
-                            </div>
-                            <i class="fs32">〉</i>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-        </c:forEach>
-    </ul>
 
+                <ul id="topic-lists" class="notice-lists" >
+                    <c:forEach items="${attendanceList}" var="attendanceList">
+                        <!-- 考勤信息 -->
+                        <div id="wrapper" class="workspace">
+                            <div class="attendance-list">
+                                <ul>
+                                    <li class="border-1px" data-id="MDAwMDAwMDAwMLOcrduGz6ux">
+                                            <%--点击每一个详情--%>
+                                        <a href="attendanceDetail?attendanceId=${attendanceList.attendanceid}&courseId=${course.courseid}"
+                                           class="link"></a>
+                                        <div class="attence-cont">
+                                            <div class="title">
+                                                <h3 class="fs30 text-overflow">${attendanceList.name}</h3>
+                                            </div>
+                                            <div class="rate fs24" style="padding-top: 10px">
+                                                <span class="text-overflow">
+                                                      考勤时间 : ${attendanceList.createtime}
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    应到 : ${attendanceList.actualnumber}人
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <i class="fs32">〉</i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <%--提示框--%>
 <div id="tipWindow">

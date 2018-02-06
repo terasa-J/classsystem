@@ -55,7 +55,7 @@
         <div class="notice-list-container">
             <div class="content">
                 <div class="send-an">
-                    <a href="createNoticePage?courseId=${courseId}&sirId=${sirId}" id="publish-topic">
+                    <a href="createNoticePage?courseId=${courseId}&sirId=${sirId}&index=${index}" id="publish-topic">
                         <i class="iconfont fs28">
                             <img src="../img/topic/newTopic.png"
                                  style="vertical-align: middle;text-align: center;">
@@ -157,10 +157,10 @@
         var noticeid = $(e).attr("id");
         var courseid = $(e).attr("name");
         //修改编辑班级的URl
-        $("#clickUpdateNotice").attr("href", "updateNotice?noticeid=" + noticeid + "&courseid=" + courseid);
+        $("#clickUpdateNotice").attr("href", "updateNotice?noticeid=" + noticeid + "&courseid=" + courseid+"&index="+${index});
 
         //修改确定删除中的URL
-        $("#confirmDeleteNotice").attr("href", "confirmDeleteNotice?noticeid=" + noticeid + "&courseid=" + courseid);
+        $("#confirmDeleteNotice").attr("href", "confirmDeleteNotice?noticeid=" + noticeid + "&courseid=" + courseid+"&index="+${index});
     }
 
     /*点击班级的  3个点   ——> 取消 */

@@ -58,6 +58,10 @@ public class NoticeController {
 
     @GetMapping(value = "/createNoticePage")
     public String createNoticePage(HttpServletRequest request, Model model) {
+        //返回 课堂考勤页面
+        String index = request.getParameter("index");
+        model.addAttribute("index", index);
+
         String courseId = request.getParameter("courseId");
         String sirId = request.getParameter("sirId");
         model.addAttribute("courseId", courseId);
@@ -91,6 +95,10 @@ public class NoticeController {
     public String updateNotice(HttpServletRequest request, Model model) {
         String noticeId = request.getParameter("noticeid");
         String courseId = request.getParameter("courseid");
+        //返回 课堂考勤页面
+        String index = request.getParameter("index");
+        model.addAttribute("index", index);
+
         Notice notice = noticeService.selectByPrimaryKey(Integer.parseInt(noticeId));
         model.addAttribute("notice", notice);
         model.addAttribute("courseId", courseId);

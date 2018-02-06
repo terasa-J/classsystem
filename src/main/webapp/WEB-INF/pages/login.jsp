@@ -17,7 +17,7 @@
     <meta http-equiv="Cache" content="no-cache">
     <link type="text/css" href="./css/common/common-9baddc8954.css" rel="stylesheet">
     <link type="text/css" href="./css/common/login-6cea13a674.css" rel="stylesheet">
-    <link href="./css/login/layer.css" rel="stylesheet" type="text/css">
+    <link href="./css/common/layer.css" rel="stylesheet" type="text/css">
     <script src="./js/jquery-3.2.1.min.js"></script>
     <style type="text/css">body {
         position: relative;
@@ -25,6 +25,58 @@
         margin: 0 auto;
         overflow: hidden;
     }
+    </style>
+    <%--单选按钮的样式--%>
+    <style>
+        .choice{
+            position: relative;
+        }
+        .choice .radio{
+            position: relative;
+            display: inline-block;
+            font-weight: 400;
+            color: #0c4757;
+            padding-left: 25px;
+            cursor: pointer;
+            padding-right: 30px;
+        }
+        .choice .radio input{
+            position: absolute;
+            left: -9999px;
+        }
+        .choice .radio i{
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            outline: 0;
+            border: 1px solid #47a8c0;
+            background: #9cd9e8;
+            border-radius: 50%;
+            transition: border-color .3s
+            -webkit-transition: border-color .3s;
+        }
+        .choice .radio input:checked+i{
+            border-color: #0c4757;
+        }
+        .choice .radio input+i:after{
+            position: absolute;
+            content: '';
+            top: 3px;
+            left: 3px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #47a8c0;
+            opacity: 0;
+            transition: opacity .1s;
+            -webkit-transition: opacity .1s;
+        }
+        .choice .radio input:checked+i:after{
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -53,13 +105,14 @@
             </div>
             <div class="weui_cell">
                 <div class="weui_cell_hd"><label class="weui_label fs32">身份</label></div>
-                <div class="weui_cell_bd weui_cell_primary  ">
-                    <form method="post" action="" class="fs32 ">
-                        <input type="radio"  name="role" style="margin-right: 2%;" value="student" checked>学生
-                        <input type="radio" name="role" style="margin-left: 10%;margin-right: 2%" value="teacher">教师
-                    </form>
-
+                <div class="weui_cell_bd weui_cell_primary choice fs32">
+                        <form method="post" action="" class="fs32 ">
+                            <label class="radio"> 学生<input type="radio"  name="role"  value="student" checked><i></i></label>
+                            <label class="radio"> 教师 <input type="radio" name="role"  value="teacher"><i></i></label>
+                        </form>
                 </div>
+
+
             </div>
         </div>
         <%--角色--%>

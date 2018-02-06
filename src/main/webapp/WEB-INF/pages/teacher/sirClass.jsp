@@ -79,12 +79,12 @@
                                 </div>
                             </div>
 
-                            <div class="total" style="margin-top:55px;">
-                                <p class="fs28 text-overflow ">创建时间：${course.createtime}</p>
+                            <div class="total" >
                                 <div class="yqm">
                                     <span class="fs30"><b>邀请码：${course.invitationcode}</b></span>
                                 </div>
                             </div>
+                                    <p class="fs28 text-overflow " style="color: #fff">创建时间：${course.createtime}</p>
 
                         </li>
                     </ul>

@@ -54,6 +54,7 @@
                 </div>
                 <input type="hidden" name="sirId" value="${sirId}">
                 <input type="hidden" name="courseid" value="${courseId}">
+                <input type="hidden" name="index" value="${index}">
             </div>
         </div>
     </form>
