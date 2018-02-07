@@ -41,9 +41,13 @@ public class AttendController {
      */
     @GetMapping(value = "/sirAttend")
     public String sirAttend(HttpServletRequest request, Model model) {
-        String index = request.getParameter("index");  // 在教师公告 返回 课堂考勤需要
+      // 在教师公告 返回 课堂考勤需要
+        String  index = request.getParameter("index");
         model.addAttribute("index", index);
-        Course course = courseController.getCourseByStatusIndex(request);
+        request.getSession().setAttribute("index",index);
+
+        //保存点击进去班级详细信息
+        Course course = courseController.getCourseByStatusIndex(request,index);
         String courseID = course.getCourseid();
         //查询该课程考勤列表
         List<Attendance> attendanceList = getAttendanceList(request, courseID);

@@ -61,7 +61,7 @@
         <div class="bottomfix">
             <div class="sign-count ">
                 <%--显示时间--%>
-                <i id="time" class="f1" style="font-size: 35px"></i>
+                <i id="time" class="f1" style="font-size: 25px"></i>
 
             </div>
             <div class="bofixgroup">

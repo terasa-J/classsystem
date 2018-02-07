@@ -86,9 +86,22 @@
     function judge() {
         var name = $("#name").val();
         var actualNumber = $("#actualNumber").val();
+        var checkNum = /^\d+$/;
+        var isNum = checkNum.test(actualNumber);
+        //判断是否都输入内容了
         if (name && actualNumber) {
-            $("#clickCreate").addClass("active");
-            $("#clickCreate").attr("href", "javascript:document:confirmCreateAttendance.submit()");
+            //判断是否正确输入数字
+            if (isNum == true){
+                $("#clickCreate").addClass("active");
+                $("#clickCreate").attr("href", "javascript:document:confirmCreateAttendance.submit()");
+            }else{
+                $("#clickCreate").removeClass("active");
+                $("#clickCreate").attr("href", "javascript:;");
+
+                $("#tipWindow").removeClass("hidden");
+                $(".gTips span").text("请输入合法格式的应到人数");
+                setTimeout('$("#tipWindow").addClass("hidden")', 3000);
+            }
         } else {
             $("#clickCreate").removeClass("active");
             $("#clickCreate").attr("href", "javascript:;");

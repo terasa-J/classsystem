@@ -97,12 +97,12 @@ public class WeChatUtils {
         ViewButtonPOJO viewButtonSir = new ViewButtonPOJO();
         viewButtonSir.setName("老师手册");
         viewButtonSir.setType("view");
-        viewButtonSir.setUrl("http://www.baidu.com");
+        viewButtonSir.setUrl("http://miffy.free.ngrok.cc/sirManual.html");
 
         ViewButtonPOJO viewButtonStu = new ViewButtonPOJO();
         viewButtonStu.setName("学生手册");
         viewButtonStu.setType("view");
-        viewButtonStu.setUrl("http://www.souhu.com");
+        viewButtonStu.setUrl("http://miffy.free.ngrok.cc/stuManual.html");
 
         ButtonPOJO button = new ButtonPOJO();
         button.setName("帮助中心");

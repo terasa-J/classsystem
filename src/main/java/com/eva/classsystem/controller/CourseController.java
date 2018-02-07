@@ -88,7 +88,8 @@ public class CourseController {
      */
     @GetMapping(value = "/updateClass")
     public String updateClass(HttpServletRequest request, Model model) {
-        Course course = getCourseByStatusIndex(request);
+        String index = request.getParameter("index");
+        Course course = getCourseByStatusIndex(request,index);
         model.addAttribute("course", course);
         return "teacher/updateClass";
     }
@@ -122,7 +123,8 @@ public class CourseController {
      */
     @GetMapping(value = "/confirmDeleteCourse")
     public String confirmDeleteCourse(HttpServletRequest request, Model model) {
-        Course course = getCourseByStatusIndex(request);
+        String index = request.getParameter("index");
+        Course course = getCourseByStatusIndex(request,index);
         //4.修改数据
         String courseID = course.getCourseid();
         if (0 != courseService.deleteByCourseID(courseID)) {
@@ -138,9 +140,9 @@ public class CourseController {
      * @Description: 根据 status.index 获得班级
      * @Date: 2018/1/27 11:53
      */
-    public Course getCourseByStatusIndex(HttpServletRequest request) {
+    public Course getCourseByStatusIndex(HttpServletRequest request,String index) {
+
         //1.获得选中的课堂下标
-        String index = request.getParameter("index");
         int indexCourse = Integer.parseInt(index);
         //2.获得全部列表
         List<Course> courseList = getSirCourseList(request);
