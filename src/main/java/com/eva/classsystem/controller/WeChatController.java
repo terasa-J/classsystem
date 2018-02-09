@@ -21,7 +21,7 @@ import java.util.Map;
  * @Date: 2018/2/5 15:53
  */
 @Controller
-public class weChatController {
+public class WeChatController {
     /**
      * @Author: Jiang Jiahong
      * @Description: 微信端服务器验证 连接微信

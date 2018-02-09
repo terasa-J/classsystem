@@ -40,11 +40,11 @@
     <header class="style2">
         <a href="/register/registerHome" class="icon-back" data-pjax="">
             <img src="../img/common/backBlack.png" style="vertical-align:middle;text-align:center">
-
         </a>
         <i class="line"></i>
         <h3 class="fs36">学生-注册</h3>
     </header>
+
 
     <form action="/registerStu" id="registerForm" method="post">
         <div class="content">
@@ -99,14 +99,12 @@
                         <input id="verifyCode" class="weui_input fs32" type="text" name="verifyCode" style="width:35%;"
                                placeholder="验证码">
                         <i class="cancel iconfont" style="display: none;"></i>
-                        <img class="verifyimg reloadverify" style="width:50%;margin-left:40px;" alt="点击切换"
+                        <img class="verifyimg reloadverify" style="width:50%;float: right" alt="点击切换"
                              onclick="this.src='/defaultKaptcha?d='+new Date()*1" src="/defaultKaptcha">
                     </div>
                 </div>
             </div>
-            <%-- <div class="login-btn">
-                 <a><input type="submit" class="log-btn fs32" value="注册并绑定"/></a>
-             </div>--%>
+
             <div class="login-btn">
                 <a href="javascript:;" class="log-btn fs32" id="registerClick" >注册并绑定</a>
             </div>

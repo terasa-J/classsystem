@@ -37,6 +37,7 @@
      sc.Id, sc.courseID, sc.stuID, sc.attendTime,c.invitationCode,c.sirID,c.cname,c.createTime,t.name
     from student_course sc,course c,teacher t
     where sc.courseID = c.courseID and c.sirID = t.sirID and sc.stuID = #{stuID,jdbcType=VARCHAR}
+    ORDER BY sc.attendTime DESC
   </select>
 
     <!--退出班级-->

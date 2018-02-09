@@ -19,6 +19,7 @@
     <meta http-equiv="Cache" content="no-cache">
     <link type="text/css" href="../css/common/common-9baddc8954.css" rel="stylesheet">
     <link href="../css/common/layer.css" rel="stylesheet" type="text/css">
+    <link type="text/css" href="../css/student/stuCourse-06127df797.css" rel="stylesheet">
     <style type="text/css">body {
         position: relative;
         max-width: 520px;
@@ -29,11 +30,8 @@
 </head>
 <body style="background: rgb(233, 241, 243);">
 <div class="page-inner" id="page-stuCourse-attend">
-    <link type="text/css" href="../css/student/stuCourse-06127df797.css" rel="stylesheet">
-
-
     <header class="header-item" style="background-color: rgb(0,117,142);">
-        <a href="javascript:history.back(-1)" class="icon-back" data-pjax="">
+        <a href="javascript:history.back(-1);" class="icon-back" data-pjax="">
             <img src="../img/common/backWhite.png" style="vertical-align: middle;text-align: center;">
         </a>
         <i class="line"></i>

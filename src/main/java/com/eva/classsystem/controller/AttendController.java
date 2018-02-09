@@ -384,6 +384,7 @@ public class AttendController {
             model.addAttribute("tipInfo", "数字签到数字有误");
             return "student/attend/numberAttend";
         }
+
     }
 
     /**
@@ -398,6 +399,10 @@ public class AttendController {
         //jsp中是中文的：  不是英文的:
         String[] str = location.split("：");
         String address = str[1];
+        System.out.println("----address----"+address);
+        System.out.println("----str----"+str[0]);
+        System.out.println("----str----"+str[1]);
+
         if(address.startsWith("FAILED")||address.startsWith("NOT_SUPPORTED")){
             model.addAttribute("tipInfo", "获取定位失败,无法签到");
             return "student/attend/webAttend";

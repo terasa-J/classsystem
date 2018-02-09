@@ -65,7 +65,8 @@
                                 <%--进入详细班级信息--%>
                             <form action="stuAttend" method="post" id="stuAttendForm${status.index}">
                                 <input type="hidden" name="index" value="${status.index}">
-                                <a href="javascript:document:stuAttendForm${status.index}.submit();" id="${status.index}" class="link"
+                                <a href="javascript:document:stuAttendForm${status.index}.submit();"
+                                   id="${status.index}" class="link"
                                    data-bg="#e9f4f0" data-banner="#07352b"></a>
                             </form>
 
@@ -78,12 +79,13 @@
                                 </span>
                                 </div>
                             </div>
-                            <div class="total" style="margin-top:55px;">
-                                <p class="fs28 text-overflow">老师：${stuCourse.name}</p>
+                            <div class="total">
                                 <div class="yqm">
-                                    <span class="fs30"><b>加入时间：${stuCourse.attendtime}</b></span>
+                                    <p class="fs28 text-overflow">老师：${stuCourse.name}</p>
                                 </div>
                             </div>
+                            <span class="fs28 " style="color: #fff">加入时间：${stuCourse.attendtime}</span>
+
                         </li>
                     </ul>
 

@@ -86,7 +86,6 @@
                         <div class="opt">
                             <a href="javascript:;" onclick="canelUnbind()" class="btn canel">取消</a>
                             <a href="javascript:document:unbindFrom.submit();" class="btn sure">确定</a>
-                            unbindEmail
                         </div>
                     </form>
                 </div>

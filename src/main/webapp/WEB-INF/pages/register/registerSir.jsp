@@ -45,14 +45,14 @@
             <div class="weui_cell">
                 <div class="weui_cell_hd"><label class="weui_label fs32">账号</label></div>
                 <div class="weui_cell_bd weui_cell_primary emailphone input-div">
-                    <input id="email" class="weui_input fs32" type="text" name="email" placeholder="个人邮箱帐号">
+                    <input id="email" class="weui_input fs32" type="text" name="email"  placeholder="个人邮箱帐号">
                     <i class="cancel iconfont" style="display: none;"></i>
                 </div>
             </div>
             <div class="weui_cell">
                 <div class="weui_cell_hd"><label class="weui_label fs32">密码</label></div>
                 <div class="weui_cell_bd weui_cell_primary input-div">
-                    <input id="password" class="weui_input fs32" type="password" name="password" placeholder="请输入8-12位密码">
+                    <input id="password" class="weui_input fs32" type="password" name="password"  placeholder="请输入8-12位密码">
                     <i class="cancel iconfont" style="display: none;"></i>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                            placeholder="验证码">
                     <i class="cancel iconfont" style="display: none;"></i>
                     <%--验证码--%>
-                    <img class="verifyimg reloadverify" style="width:50%;margin-left:40px;" alt="点击切换"
+                    <img class="verifyimg reloadverify" style="width:50%;float: right" alt="点击切换"
                          onclick="this.src='/defaultKaptcha?d='+new Date()*1" src="/defaultKaptcha">
                 </div>
             </div>

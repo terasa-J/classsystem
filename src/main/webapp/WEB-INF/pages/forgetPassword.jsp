@@ -19,6 +19,7 @@
     <link type="text/css" href="./css/common/common-9baddc8954.css" rel="stylesheet">
     <link type="text/css" href="./css/common/login-6cea13a674.css" rel="stylesheet">
     <link href="./css/common/layer.css" rel="stylesheet" type="text/css">
+    <link href="./css/common/radio.css" rel="stylesheet" type="text/css">
     <script src="./js/jquery-3.2.1.min.js"></script>
     <style type="text/css">body {
         position: relative;
@@ -44,17 +45,17 @@
                 <div class="weui_cell">
                     <div class="weui_cell_hd"><label class="weui_label fs32">账号</label></div>
                     <div class="weui_cell_bd weui_cell_primary input-div">
-                        <input id="userID" class="weui_input fs32" type="email" name="userID" placeholder="学号/教师号"
+                        <input id="userID" class="weui_input fs32" type="text" name="userID" placeholder="学号/教师号"
                                autofocus>
                         <i class="cancel iconfont" style="display: none;"></i>
                     </div>
                 </div>
                 <div class="weui_cell">
                     <div class="weui_cell_hd"><label class="weui_label fs32">身份</label></div>
-                    <div class="weui_cell_bd weui_cell_primary  ">
+                    <div class="weui_cell_bd weui_cell_primary  choice fs32">
                         <form method="post" action="" class="fs32 ">
-                            <input type="radio" name="role" style="margin-right: 2%" value="student" >学生
-                            <input type="radio" name="role" style="margin-left: 10%;margin-right: 2%" value="teacher">教师
+                            <label class="radio"> 学生<input type="radio"  name="role"  value="student" checked><i></i></label>
+                            <label class="radio"> 教师 <input type="radio" name="role"  value="teacher"><i></i></label>
                         </form>
 
                     </div>

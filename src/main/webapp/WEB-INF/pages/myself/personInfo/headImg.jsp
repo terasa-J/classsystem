@@ -78,7 +78,9 @@
                         <span class="uploadoccupy">请点击选择图片</span>
                         <div class="modal-body">
                             <div class="avatar-body">
-                                <div class="avatar-wrapper" id="avatar-wrapper"  style="padding-top:10px;text-align: center;vertical-align: middle"></div>
+                                <div class="avatar-wrapper" id="avatar-wrapper"  style="padding-top:10px;text-align: center;vertical-align: middle">
+                                    <%--显示图片--%>
+                                </div>
 
                             <!-- 去掉 disabled 就可以点击 -->
                                 <a href="javascript:;" id="upload" class="avatar-save uploadImg disabled" >上传图片</a>
@@ -100,8 +102,11 @@
 </div>
 
 </body>
+
 <script type="text/javascript">
+    var img = new Image();
     document.querySelector("input").addEventListener('change', function () {
+
         //先判断是否为图片格式
         var that = this;
         var filepath = $(that).val();
@@ -119,17 +124,17 @@
         lrz(that.files[0], {
             width: 800
         }).then(function (rst) {
-            var img = new Image();
 
             var div = document.getElementById("avatar-wrapper");
-           div.style.width = "520px";
-            div.style.height = "200px";
-            div.style.display = "block";
+//           div.style.width = "520px";
+      //      div.style.height = "600px";
+//            div.style.display = "block";
             //展示图片
             div.appendChild(img);
             //上传图片按钮可用
             $("#upload").removeClass("disabled")
             $("#upload").attr("href", "javascript:document:uploadForm.submit();");
+
             //保存图片地址
             img.src = rst.base64;
             $("#imgUrl").val(img.src);

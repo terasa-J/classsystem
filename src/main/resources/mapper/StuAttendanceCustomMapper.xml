@@ -60,6 +60,7 @@
         <foreach item="item" collection="list" index="index" open="(" separator="," close=")">
             #{item}
         </foreach>
+        ORDER BY sa.attendTime DESC
     </select>
 
 </mapper>

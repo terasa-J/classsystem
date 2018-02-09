@@ -18,6 +18,7 @@
     <meta http-equiv="Cache" content="no-cache">
     <link type="text/css" href="../css/common/common-9baddc8954.css" rel="stylesheet">
     <link href="../css/common/layer.css" rel="stylesheet" type="text/css">
+    <link type="text/css" href="../css/student/stuCourse-06127df797.css" rel="stylesheet">
     <%--加载高德地图--%>
     <script type="text/javascript"
             src="http://webapi.amap.com/maps?v=1.4.3&key=ec3226d69643a423012abef447eb8db1"></script>
@@ -35,17 +36,18 @@
 
 <body onload="javascript:toolBar.doLocation()">
 <div class="page-inner" id="page-getlocation-confirm">
-    <link type="text/css" href="../css/student/stuCourse-06127df797.css" rel="stylesheet">
-    <header class="header-item" style="background-color: rgb(0, 117, 142);">
-        <a href="javascript:history.back(-1)" class="icon-back" data-pjax="">
-            <img src="../img/common/backWhite.png" style="vertical-align: middle;text-align: center;">
-        </a>
-        <i class="line"></i>
-        <h3 class="fs36 text-overflow">确认签到位置</h3>
-    </header>
-    <div id="wrapper-getLocation">
-        <form action="confirmAttend" method="post" id="confirmAttendForm">
-            <div class="location-map-checkin" style="height:90px;">
+    <form action="confirmAttend" method="post" id="confirmAttendForm">
+        <header class="header-item" style="background-color: rgb(0, 117, 142);">
+            <a href="javascript:history.back(-1)" class="icon-back" data-pjax="">
+                <img src="../img/common/backWhite.png" style="vertical-align: middle;text-align: center;">
+            </a>
+            <i class="line"></i>
+            <h3 class="fs36 text-overflow" id="attencename">确认签到位置</h3>
+
+        </header>
+
+        <div id="wrapper-getLocation">
+            <div class="location-map-checkin" style="height:80px;">
                 <a href="javascript:document:confirmAttendForm.submit();" class="gotocheckin">
                     <span class="top">定位准确</span>
                     <span class="bottom">点击签到</span>
@@ -59,20 +61,21 @@
             <div style="padding-bottom: 10px">
                 <input type="text" id="location" name="location" class="fs30" style="width: 100%;font-size: 15px">
 
-                <input type="hidden"  name="attendanceId" value="${attendanceId}">
-                <input type="hidden"  name="attendanceCode" value="${attendanceCode}">
+                <input type="hidden" name="attendanceId" value="${attendanceId}">
+                <input type="hidden" name="attendanceCode" value="${attendanceCode}">
                 <input type="hidden" name="index" value="${index}">
             </div>
-        </form>
 
-
-        <%--显示地图--%>
-        <div id="container"
-             style="height: 560px; overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;">
         </div>
 
-    </div>
+            <%--显示地图--%>
+            <div id="container"
+                 style="height:560px;overflow: hidden; position: relative;  background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;">
+            </div>
 
+
+
+    </form>
 </div>
 
 
@@ -85,7 +88,7 @@
 
 <script>
     setTimeout('$("#tipWindow").addClass("hidden")', 3000);
-/**/
+    /**/
     //自定义定位标记
     var toolBar;
 
@@ -124,7 +127,7 @@
             showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
             showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
             panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-            zoomToAccuracy:true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            zoomToAccuracy: true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
 
         });
         map.addControl(geolocation);
@@ -138,7 +141,7 @@
         var str = ["定位成功"];
         var location = data.formattedAddress;
         document.getElementById('tip').innerHTML = str;
-        document.getElementById('location').value = "地址："+location;
+        document.getElementById('location').value = "地址：" + location;
 
     }
 
@@ -146,7 +149,7 @@
     function onError(data) {
         var error = ['定位失败'];
         document.getElementById('tip').innerHTML = error;
-        document.getElementById('location').value = "错误提示："+data.info + '--' + data.message;
+        document.getElementById('location').value = "错误提示：" + data.info + '--' + data.message;
     }
 
 
